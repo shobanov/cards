@@ -21,6 +21,9 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
+    "App.test.tsx",
+    "src/App.tsx",
+    "src/Redux/store.ts"
   ]
 }

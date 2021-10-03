@@ -1,13 +1,17 @@
-import CircleTopik from '../circle-topik/CircleTopik'
+import Circle from '../Circle'
 import s from './Card.module.scss'
 
+interface IProps {
+  showCircle?: boolean
+}
 
-function Card({showCircle}: any) {
+const Card: React.FC<IProps> = ({showCircle}) => {
+  
   return (
     <div className={s.mainBlock}>
-      {showCircle ? <CircleTopik /> : null}
-      {showCircle ? <CircleTopik /> : null}
-      {showCircle ? <CircleTopik /> : null}
+      {showCircle && <Circle />}
+      {showCircle && <Circle />}
+      {showCircle && <Circle />}
     </div>
   )
 }
