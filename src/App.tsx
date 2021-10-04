@@ -4,7 +4,6 @@ import m from './components/Modal/Modal.module.scss'
 import state from './mock/State'
 import Modal from './components/Modal'
 import { useState } from 'react'
-import { ModalPropsType } from './components/Modal/Modal'
 
 function App() {
 
