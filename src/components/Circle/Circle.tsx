@@ -1,11 +1,7 @@
-import s from './Circle.module.scss'
+import s from './Circle.module.scss';
 
-function Circle() {
-  return (
-    <div className={s.mainBlock}>
-      
-    </div>
-  )
-}
+const Circle: React.FC = () => {
+  return <div className={s.mainBlock}></div>;
+};
 
-export default Circle
+export default Circle;
