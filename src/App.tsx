@@ -1,38 +1,37 @@
 import Card from './components/Card'
 import s from './App.module.scss'
-import m from './components/Modal/Modal.module.scss'
 import state from './mock/State'
 import Modal from './components/Modal'
 import { useState } from 'react'
-import { ModalPropsType } from './components/Modal/Modal'
 
 function App() {
 
-const cardOfReact = () => {
-  const deckOfReact = state.themes.react
-  const itemReact = deckOfReact[Math.floor(Math.random() * deckOfReact.length)]
-  alert(itemReact.description)
-}
+  const cardReact = () => {
+    const deckReact = state.themes.react
+    const itemReact = deckReact[Math.floor(Math.random() * deckReact.length)]
+    alert(itemReact.description)
+  }
 
-const commonCard = () => {
-  const items = Object.values(state.themes).flat()
-  const {description} = items[Math.random() * items.length | 0]
-  alert(description)
-}
+  const commonCard = () => {
+    const items = Object.values(state.themes).flat()
+    const randomItem = items[Math.random() * items.length | 0]
+    return randomItem
+  }
 
-const [modalActive, setModalActive] = useState(true)
+  const [modalActive, setModalActive] = useState(false)
 
   return (
     <div className={s.app}>
       <Card />
       <div
-        className={m.openModal}
         onClick={() => setModalActive(true)}
       >
-          <Card showCircle />
+        <Card showCircle />
       </div>
       <Card />
-      <Modal active={modalActive} setActive={setModalActive} />
+      <Modal active={modalActive} setActive={setModalActive}>
+        <div>{JSON.stringify(commonCard())}</div>
+      </Modal>
     </div>
   )
 }
