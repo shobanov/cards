@@ -1,8 +1,0 @@
-dist/*
-configs/*
-public/*
-config/*
-node_modules/*
-*/__tests__
-src/__tests__/*
-*/**/__tests__/*

@@ -1,18 +1,18 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import thunkMiddleware from 'redux-thunk';
 import { authReducer } from './auth-reducer';
+import { cardsReducer } from './cards-reducer';
 
-// creating the structure of the state object
 const rootReducer = combineReducers({
   auth: authReducer,
+  decks: cardsReducer,
 });
 
-// defined the type of the entire state object
 export type AppRootStateType = ReturnType<typeof rootReducer>;
 
-// create store
-export const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
-
-// to access the state through the browser console
-// @ts-ignore
-window.store = store;
+export const store = createStore(
+  rootReducer,
+  composeWithDevTools(
+  applyMiddleware(thunkMiddleware),
+));

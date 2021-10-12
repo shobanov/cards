@@ -1,10 +1,64 @@
 {
-  "cards": [
-    { "id": 1, "title": "json-server", "author": "typicode" },
-    { "id": 2, "title": "json-server", "author": "typicode2" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "cards": {
+    "js": [
+      {
+        "id": 1,
+        "topic": "Js",
+        "title": "some Js question",
+        "body": "some text of Js 1"
+      },
+      {
+        "id": 2,
+        "topic": "Js",
+        "title": "some Js question",
+        "body": "some text of Js 2"
+      },
+      {
+        "id": 3,
+        "topic": "Js",
+        "title": "some Js question",
+        "body": "some text of Js 3"
+      }
+    ],
+    "react": [
+      {
+        "id": 1,
+        "topic": "React",
+        "title": "some Js question",
+        "body": "some text of React 1"
+      },
+      {
+        "id": 2,
+        "topic": "React",
+        "title": "some React question",
+        "body": "some text of React 2"
+      },
+      {
+        "id": 3,
+        "topic": "React",
+        "title": "some React question",
+        "body": "some text of React 3"
+      }
+    ],
+    "css": [
+      {
+        "id": 1,
+        "topic": "Css",
+        "title": "some Css question",
+        "body": "some text of Css 1"
+      },
+      {
+        "id": 2,
+        "topic": "Css",
+        "title": "some Css question",
+        "body": "some text of Css 2"
+      },
+      {
+        "id": 3,
+        "topic": "Css",
+        "title": "some Css question",
+        "body": "some text of Css 3"
+      }
+    ]  
+  }
 }
