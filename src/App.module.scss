@@ -1,11 +1,16 @@
 body {
   background: repeat #000 url("https://raw.githubusercontent.com/lordniken/feed-your-cat/master/src/assets/bg.png");
   font-family: "Trebuchet MS", sans-serif;
+  overflow: hidden;
 }
 
 .app {
+}
+
+.wrapper {
   display: flex;
-  justify-content: space-around;
-  height: 100%;
-  width: 100%;
+  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  height: 100vh;
 }

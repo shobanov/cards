@@ -6,9 +6,7 @@ const initialState: Array<CardsType> = [];
 export const cardsReducer = (state: Array<CardsType> = initialState, action: ActionsType) => {
   switch (action.type) {
     case 'FETCH_RANDOM_CARD': {
-      const items = Object.values(action.payload).flat();
-      const randomItem = items[(Math.random() * items.length) | 0];
-      return [randomItem];
+      return action.payload;
     }
     default:
       return state;

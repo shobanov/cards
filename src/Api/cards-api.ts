@@ -2,13 +2,22 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:4000/cards/',
+  baseURL: 'http://localhost:5000/',
 });
 
 // api
 export const cardsAPI = {
   getCards() {
-    return instance.get<Array<CardsType>>('');
+    return instance.get<Array<CardsType>>('deck');
+  },
+  removeCardFromCommonDeck() {
+    return instance.delete<Array<CardsType>>('commonDeck')
+  },
+  addCardToLearnedDeck() {
+    return instance.put<Array<CardsType>>('learnedDeck')
+  },
+  addCardToUnlearnedDeck() {
+    return instance.put<Array<CardsType>>('unlearnedDeck')
   },
 };
 
@@ -17,7 +26,7 @@ export type CardsType = {
   id: number;
   topic: string;
   title: string;
-  body: string;
+  answer: string;
 };
 
 export type ResponseType = {

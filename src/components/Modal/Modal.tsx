@@ -13,7 +13,7 @@ const Modal: React.FC<ModalPropsType> = ({ active, setActive, children }) => {
       onClick={() => setActive(false)}
     >
       <div
-        className={cn(styles.modal__content, { [styles.active]: active })}
+        className={cn(styles.modal__visual, {[styles.active]: active })}
         onClick={(e) => e.stopPropagation()}
       >
         {children}
@@ -23,5 +23,3 @@ const Modal: React.FC<ModalPropsType> = ({ active, setActive, children }) => {
 };
 
 export default Modal;
-
-// {active ? styles.modal__content__active : styles.modal}
