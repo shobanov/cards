@@ -1,0 +1,24 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-ts"
+}
+
+model Card {
+  id          Int     @id @default(autoincrement())
+  topic       Topic   @relation(fields: [topicId], references: [id])
+  topicId     Int    
+  title       String
+  description String
+  learned     Boolean @default(false)
+  viewed      Boolean @default(false)
+}
+
+model Topic {
+  id    Int @id @default(autoincrement())
+  topic String
+  cards Card[]
+}
