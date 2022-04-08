@@ -1,4 +1,4 @@
-import { ToggleSwitch } from '../../components';
+import { ToggleSwitch, Button } from '../../components';
 import { TopicSelectContainer } from './styles';
 
 export const DeckControls: React.FC = () => {
@@ -7,6 +7,9 @@ export const DeckControls: React.FC = () => {
       <ToggleSwitch topic="HTML" />
       <ToggleSwitch topic="CSS" />
       <ToggleSwitch topic="JS" />
+      <Button type="submit">
+        get card
+      </Button>
     </TopicSelectContainer>
   );
 };

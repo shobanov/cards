@@ -1,2 +1,2 @@
-export { DeckControls } from '../decs/DeckControls';
 export { ToggleSwitch } from './ToggleSwitch';
+export { Button } from './Button';
