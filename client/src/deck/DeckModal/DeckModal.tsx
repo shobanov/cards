@@ -1,22 +1,18 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import { Button } from '../../components/Button';
 import { ModalVisual, ModalWrapper } from './styles';
+import { ModalContext } from '../../context';
 
-interface IProps {
-  // active: boolean;
-  // setActive: (_: boolean) => void;
-};
+export const DeckModal: React.FC = ({ children }) => {
 
-export const DeckModal: React.FC<IProps> = ({ children }) => {
-  const [modalActive, setModalActive] = useState<boolean>(false);
+const {isModalActive, setModalActive} = useContext(ModalContext);
 
   return (
     <ModalWrapper
-      active={modalActive}
-      // onClick={() => setModalActive(false)}
+      active={isModalActive}
     >
       <ModalVisual
-        active={modalActive}
+        active={isModalActive}
         onClick={(e) => e.stopPropagation()}
       >
         <Button onClick={() => setModalActive(false)}>
@@ -39,3 +35,5 @@ export const DeckModal: React.FC<IProps> = ({ children }) => {
         {children}
       </div>
     </div> */}
+
+    // (e) => e.stopPropagation()

@@ -1,11 +1,11 @@
 // import { useQuery } from 'react-query';
 import { Root } from './Root';
-import { Deck } from './deck';
+import { Deck, DeckModal } from './deck';
 
 export const App: React.FC = () => {
-  
   return (
     <Root>
+      <DeckModal />
       <Deck />
       <Deck />
       <Deck />

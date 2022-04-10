@@ -1,5 +1,5 @@
 import { DeckControls } from './DeckControls';
-import { DeckContainer } from './styles'; 
+import { DeckContainer } from './styles';
 
 export const Deck: React.FC = () => {
   return (
