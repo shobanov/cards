@@ -1,24 +1,23 @@
-import { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 
-import { ModalContext } from './context/ModalContext';
 import { store } from './Redux/store';
+import { ModalContextProvider } from './context'
 import { App } from './App';
 
 const Main = () => {
-  const [isModalActive, setModalActive] = useState<boolean>(false);
-
   return (
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
-        <ModalContext.Provider value={{isModalActive, setModalActive}}>
+        <ModalContextProvider>
           <App />
-        </ModalContext.Provider>
+        </ModalContextProvider>
+        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </Provider>
-  )
+  );
 };
 
 const queryClient = new QueryClient();

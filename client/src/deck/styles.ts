@@ -8,3 +8,5 @@ export const DeckContainer = styled.div`
   border-radius: 15px;
   background-color: dimgray;
 `;
+
+export const DeckTitle = styled.h2``;

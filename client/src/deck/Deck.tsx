@@ -1,9 +1,14 @@
 import { DeckControls } from './DeckControls';
-import { DeckContainer } from './styles';
+import { DeckContainer, DeckTitle } from './styles';
 
-export const Deck: React.FC = () => {
+interface Iprops {
+  title: string;
+};
+
+export const Deck: React.FC<Iprops> = ({ title }) => {
   return (
     <DeckContainer>
+      <DeckTitle>{title}</DeckTitle>
       <DeckControls />
     </DeckContainer>
   );

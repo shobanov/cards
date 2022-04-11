@@ -4,7 +4,6 @@ import { ModalVisual, ModalWrapper } from './styles';
 import { ModalContext } from '../../context';
 
 export const DeckModal: React.FC = ({ children }) => {
-
 const {isModalActive, setModalActive} = useContext(ModalContext);
 
   return (
@@ -13,9 +12,10 @@ const {isModalActive, setModalActive} = useContext(ModalContext);
     >
       <ModalVisual
         active={isModalActive}
-        onClick={(e) => e.stopPropagation()}
       >
-        <Button onClick={() => setModalActive(false)}>
+        <Button
+          handler={() => setModalActive(false)}
+        >
           X
         </Button>
         {children}

@@ -6,13 +6,12 @@ export const App: React.FC = () => {
   return (
     <Root>
       <DeckModal />
-      <Deck />
-      <Deck />
-      <Deck />
+      <Deck title="Learned" />
+      <Deck title="Common Deck" />
+      <Deck title="Unlearned" />
     </Root>
   );
 };
-
 
 // const state = useSelector<AppRootStateType, Array<CardType>>(state => state.decks);
   // const { data, isLoading } = useQuery("topicList", () =>

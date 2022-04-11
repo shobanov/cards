@@ -2,11 +2,16 @@ import { ButtonStyled } from './styles';
 
 interface IProps  {
   type?: 'submit';
-  onClick?: any;
+  handler?: () => void;
 };
 
-export const Button: React.FC<IProps> = ({ type, children }) => {
+export const Button: React.FC<IProps> = ({ type, handler, children }) => {
   return (
-    <ButtonStyled type={type}>{children}</ButtonStyled>
+    <ButtonStyled
+      type={type}
+      onClick={handler}
+    >
+      {children}
+    </ButtonStyled>
   );
 };

@@ -1,2 +1,2 @@
-export { ToggleSwitch } from './ToggleSwitch';
+export { Checkbox } from './Checkbox';
 export { Button } from './Button';
