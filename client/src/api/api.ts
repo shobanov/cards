@@ -1,25 +1,22 @@
 import axios from 'axios';
 
-const API_URL = process.env.CARDS_API_URL;
-
-const wait = (ms: number) => new Promise(r => setTimeout(r, ms));
+const instance = axios.create({
+  baseURL: "http://localhost:5000/",
+});
 
 export const api = Object.freeze({
-  async fetchTopicList() {
-    const response = await axios.get(`${API_URL}/topics`);
+  async updateCard(newValues: UpdateCardType) {
+    const { id, ...cardPayload } = newValues;
+    const response = await instance.put(`cards/${id}`, cardPayload);
 
-    await wait(1000);
+    return response.data;
+
+  },
+  async fetchCards() {
+    const response = await instance.get('card/list');
 
     return response.data;
   },
-  async fetchCardList(topicId: number) {
-    const response = await axios.get(`${API_URL}/topics${topicId}`);
-
-    await wait(1000);
-
-    return response.data;
-  },
-
 });
 
 // types
@@ -29,6 +26,12 @@ export type CardType = {
   topicId: number;
   title: string;
   description: string;
+  learned: boolean;
+  viewed: boolean;
+};
+
+export type UpdateCardType = {
+  id: number;
   learned: boolean;
   viewed: boolean;
 };

@@ -1,7 +1,9 @@
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClientProvider } from 'react-query';
+import { queryClient } from './react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import { BrowserRouter } from 'react-router-dom';
 
 import { store } from './Redux/store';
 import { ModalContextProvider } from './context'
@@ -20,9 +22,11 @@ const Main = () => {
   );
 };
 
-const queryClient = new QueryClient();
+// const queryClient = new QueryClient();
 
 ReactDOM.render(
-  <Main />,
+  <BrowserRouter>
+    <Main />
+  </BrowserRouter>,
   document.getElementById('root'),
 );

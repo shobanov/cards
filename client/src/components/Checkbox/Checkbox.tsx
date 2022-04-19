@@ -4,13 +4,8 @@ import { Input, Label } from './styles';
 interface IProps  {
   topic: 'HTML' | 'CSS' | 'JS';
 };
-
+// rename to TopicSelect
 export const Checkbox: React.FC<IProps> = ({ topic }) => {
-  // const [checked, setChecked] = useState<boolean>(false);
-
-  // const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-  //   setChecked(e.target.checked);
-  // };
 
   return (
     <>
