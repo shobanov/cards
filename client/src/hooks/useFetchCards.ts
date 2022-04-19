@@ -7,7 +7,7 @@ export const useFetchCards = () => {
     'card/list',
     api.fetchCards,
     {
-      onError: (error: any ) => {
+      onError: (error: any ) => {   // ?
         alert(error.message);
       },
     }
