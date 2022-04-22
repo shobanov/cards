@@ -1,5 +1,5 @@
 const CardService = require ('./card.services');
-// use hooks?
+
 export async function fetchCards(_req, res) {
     try {
       const cards = await CardService.fetchCards();
@@ -16,7 +16,7 @@ export async function fetchCards(_req, res) {
 };
 
 export async function updateCardById(req, res) {
-  const { id, learned, viewed } = req.body;
+  const {id, learned, viewed } = req.body;
   try {
     const cards = await CardService.updateCardById(id, learned, viewed);
 

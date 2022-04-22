@@ -20,6 +20,7 @@ export const api = Object.freeze({
 });
 
 // types
+
 export type CardType = {
   id: number;
   topic: TopicList;
@@ -44,5 +45,5 @@ export type TopicType = {
 export type TopicList = 'HTML' | 'CSS' | 'JS';
 
 export type ResponseType = {
-  resultCode: number;
+  cards: CardType[];
 };

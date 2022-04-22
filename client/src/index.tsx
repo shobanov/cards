@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { QueryClientProvider } from 'react-query';
 import { queryClient } from './react-query';
@@ -22,11 +22,11 @@ const Main = () => {
   );
 };
 
-// const queryClient = new QueryClient();
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container!);
 
-ReactDOM.render(
+root.render(
   <BrowserRouter>
     <Main />
-  </BrowserRouter>,
-  document.getElementById('root'),
+  </BrowserRouter>
 );

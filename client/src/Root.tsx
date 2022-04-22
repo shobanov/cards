@@ -1,3 +1,4 @@
+import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
 const StyledRoot = styled.div`
@@ -11,7 +12,7 @@ const StyledRoot = styled.div`
   height: 100vh;
 `;
 
-const GlobalStyles = createGlobalStyle`
+const GlobalStyles: any  = createGlobalStyle`
 
 body {
   background-color: #1A1A1A;

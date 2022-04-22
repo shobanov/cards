@@ -1,13 +1,14 @@
 import { useQuery } from 'react-query';
 
 import { api } from '../api';
+import { ResponseType } from '../api/api';
 
 export const useFetchCards = () => {
-  const { data } = useQuery<any>(     // ?
+  const { data } = useQuery<ResponseType, Error>(
     'card/list',
     api.fetchCards,
     {
-      onError: (error: any ) => {   // ?
+      onError: (error) => {
         alert(error.message);
       },
     }

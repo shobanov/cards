@@ -3,7 +3,11 @@ import { Button } from '../../components/Button';
 import { ModalVisual, ModalWrapper } from './styles';
 import { ModalContext } from '../../context';
 
-export const DeckModal: React.FC = ({ children }) => {
+interface IProps {
+  children: React.ReactNode;
+};
+
+export const DeckModal: React.FC<IProps> = ({ children }) => {
 const {isModalActive, setModalActive} = useContext(ModalContext);
 
   return (
@@ -23,17 +27,3 @@ const {isModalActive, setModalActive} = useContext(ModalContext);
     </ModalWrapper>
   );
 };
-
-{/* <div
-      className={cn(styles.modal, { [styles.active]: active })}
-      onClick={() => setActive(false)}
-    >
-      <div
-        className={cn(styles.modal__visual, {[styles.active]: active })}
-        onClick={(e) => e.stopPropagation()}
-      >
-        {children}
-      </div>
-    </div> */}
-
-    // (e) => e.stopPropagation()

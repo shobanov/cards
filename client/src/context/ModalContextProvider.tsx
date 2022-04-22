@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { ModalContext } from './ModalContext';
+
+interface IProps {
+  children: React.ReactNode;
+};
  
-export const ModalContextProvider: React.FC = ({children}) => {
+export const ModalContextProvider: React.FC<IProps> = ({ children }) => {
   const [isModalActive, setModalActive] = useState<boolean>(false);
 
   return (

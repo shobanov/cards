@@ -1,5 +1,4 @@
-import { Dispatch } from 'redux';
-import { api, CardType } from '../api/api';
+import { CardType } from '../api/api';
 
 const initialState: Array<CardType> = [];
 

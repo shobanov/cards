@@ -24,6 +24,6 @@ export async function updateCardById(id, learned, viewed) {
     return cards;
   }
     catch (e) {
-      throw Error('updateCardById request error' + ' ' + id + ' ' + learned + ' ' + viewed);
+      throw Error('updateCardById request error');
   };
 };
