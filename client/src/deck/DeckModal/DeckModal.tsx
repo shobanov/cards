@@ -3,11 +3,7 @@ import { Button } from '../../components/Button';
 import { ModalVisual, ModalWrapper } from './styles';
 import { ModalContext } from '../../context';
 
-interface IProps {
-  children: React.ReactNode;
-};
-
-export const DeckModal: React.FC<IProps> = ({ children }) => {
+export const DeckModal: React.FC = () => {
 const {isModalActive, setModalActive} = useContext(ModalContext);
 
   return (
@@ -22,7 +18,6 @@ const {isModalActive, setModalActive} = useContext(ModalContext);
         >
           X
         </Button>
-        {children}
       </ModalVisual>
     </ModalWrapper>
   );

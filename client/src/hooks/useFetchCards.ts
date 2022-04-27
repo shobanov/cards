@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import { api } from '../api';
 import { ResponseType } from '../api/api';
 
-export const useFetchCards = () => {
+export const useFetchCardsQuery = () => {
   const { data } = useQuery<ResponseType, Error>(
     'card/list',
     api.fetchCards,

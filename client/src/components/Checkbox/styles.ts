@@ -5,4 +5,5 @@ export const Input = styled.input`
 
 export const Label = styled.label`
   cursor: pointer;
+  position: relative;
 `;

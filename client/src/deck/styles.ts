@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const DeckContainer = styled.div`
   max-width: 200px;
@@ -8,9 +9,13 @@ export const DeckContainer = styled.div`
   border-radius: 15px;
   background-color: dimgray;
   border: 2px solid;
-  &:hover {
-    border: 2px solid red;
-  }
 `;
 
-export const DeckTitle = styled.h2``;
+export const LinkRouterDom = styled(Link)`
+  text-decoration: none;
+  color: #000 !important;
+`;
+
+export const DeckTitle = styled.h2`
+  text-align: center;
+`;

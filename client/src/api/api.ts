@@ -6,9 +6,8 @@ const instance = axios.create({
 
 export const api = Object.freeze({
   async updateCard(newValues: UpdateCardType) {
-    const { id, ...cardPayload } = newValues;
-    const response = await instance.put(`cards/${id}`, cardPayload);
-
+    const { id, learned, viewed } = newValues;
+    const response = await instance.put(`card/${id}`, {id, learned, viewed});
     return response.data;
 
   },

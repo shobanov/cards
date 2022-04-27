@@ -1,16 +1,44 @@
+import React from 'react';
+
 import { Root } from './Root';
 import { Deck } from './deck';
-import * as hooks from './hooks';
+import { useFetchCards, useFilterCards, useUpdateCard } from './hooks';
+import { Route, Routes } from 'react-router-dom';
+import { useQuery } from 'react-query';
 
-export const App: React.FC = () => {
-  const fetchCardsQ = hooks.useFetchCards();
-  console.log(fetchCardsQ);
+const Decks = () => {
+  // const useUpdateCardM = useUpdateCard()
+  // const fetchCardsQ = useFetchCards();
+
+  // const x = fetchCardsQ?.includes(learned: true)
+  // console.log(fetchCardsQ)
+
+  // const newArray = fetchCardsQ?.filter(el => {
+  //   el. = 1000 && el.sqft = 500;
+  // });
+
+  const { cardsForLearnedDeck, cardsForUnlearnedDeck } = useFilterCards();
+
+  console.log(cardsForLearnedDeck, cardsForUnlearnedDeck)
+
 
   return (
-    <Root>
+    <>
       <Deck title="Learned" />
       <Deck title="Common" />
       <Deck title="Unlearned" />
+    </>
+  )
+};
+
+export const App: React.FC = () => {
+  
+  return (
+    <Root>
+      <Routes>
+        <Route path="/:deck" element={<Decks />} />
+        <Route path="/" element={<Decks />} />
+      </Routes>
     </Root>
   );
 };

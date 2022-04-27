@@ -1,23 +1,28 @@
 import { useContext } from 'react';
+
 import { Checkbox, Button } from '../../components';
 import { ModalContext } from '../../context';
-import { TopicSelectContainer } from './styles';
+import { DeckControlsContainer } from './styles';
 
-export const DeckControls: React.FC = () => {
+interface IProps {
+  isSelected: boolean;
+};
+
+export const DeckControls: React.FC<IProps> = ({ isSelected }) => {
   const {setModalActive} = useContext(ModalContext);
  
   return (
-    // DeckControlsContainer
-    <TopicSelectContainer>
-      <Checkbox topic="HTML" />
-      <Checkbox topic="CSS" />
-      <Checkbox topic="JS" />
+    <DeckControlsContainer>
+      <Checkbox topic="HTML" disabled={isSelected} />
+      <Checkbox topic="CSS" disabled={isSelected} />
+      <Checkbox topic="JS" disabled={isSelected} />
       <Button
         type="submit"
+        disabled={isSelected}
         handler={() => setModalActive(true)}
       >
         get card
       </Button>
-    </TopicSelectContainer>
+    </DeckControlsContainer>
   );
 };

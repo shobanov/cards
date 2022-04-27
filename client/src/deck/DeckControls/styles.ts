@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TopicSelectContainer = styled.div`
+export const DeckControlsContainer = styled.div`
   
 `;
 
